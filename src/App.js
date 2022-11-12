@@ -1,7 +1,10 @@
 import Header from './components/Header';
+import Footer from './components/Footer';
+import About from './components/About';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 const JSON_SERVER_URL = 'http://localhost:8000/tasks'
 
@@ -60,15 +63,25 @@ function App() {
       body: JSON.stringify(updatedTask)
     })
 
-    setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task))
+    setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: updatedTask.reminder } : task))
   }
 
   return (
-    <div className="container">
-      <Header title="Mero Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} showAddButton={showAddTask} />
-      {showAddTask && <AddTask onAdd={addTask} />}
-      <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
-    </div>
+    <Router>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={
+            <>
+            <Header title="Mero Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} showAddButton={showAddTask} />
+              {showAddTask && <AddTask onAdd={addTask} />}
+              <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
+            </>
+          } />
+          <Route path='/about' element={<About />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
