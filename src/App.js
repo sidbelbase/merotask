@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 function App() {
 
+  const [showAddTask, setShowAddTask] = useState(false)
+
   const [tasks, setTasks] = useState(
     [
       {
@@ -49,8 +51,8 @@ function App() {
 
   return (
     <div className="container">
-      <Header title="Mero Task Tracker" />
-      <AddTask onAdd={addTask} />
+      <Header title="Mero Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
     </div>
   );
