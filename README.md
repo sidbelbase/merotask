@@ -1,6 +1,6 @@
 # Mero Task Tracker
 
-Mero Task Tracker is a simple SPA (Single Page Application) for tracking tasks. It is built using React. It uses a REST API to store and retrieve tasks which is based on `json-server` which is a simple REST API server, just like `sqlite3` but using JSON file.
+Mero Task Tracker is a simple SPA for tracking tasks inspired from react crash course. It is built using React & Json-Server which mocks like a REST API server and uses json file persisting data just like SQLite but using JSON file.
 
 
 ## Libraries
