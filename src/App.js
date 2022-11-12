@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header title="Mero Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} />
+      <Header title="Mero Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} showAddButton={showAddTask} />
       {showAddTask && <AddTask onAdd={addTask} />}
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
     </div>
