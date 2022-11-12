@@ -69,10 +69,10 @@ function App() {
   return (
     <Router>
       <div className="container">
+        <Header title="Mero Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} showAddButton={showAddTask} />
         <Routes>
           <Route path="/" element={
             <>
-            <Header title="Mero Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} showAddButton={showAddTask} />
               {showAddTask && <AddTask onAdd={addTask} />}
               <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
             </>

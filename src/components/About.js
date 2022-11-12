@@ -2,7 +2,7 @@ const About = () => {
 
     return (
         <>
-            <h2>About Mero Task Tracker</h2>
+            <h2>About This Project</h2>
             <p>Version 1.0.0</p>
             <br />
             <p>
