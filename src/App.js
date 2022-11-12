@@ -1,9 +1,9 @@
+import Header from './components/Header';
+
 function App() {
   return (
-    <div className="App">
-      <header className="header">
-        <p>Hello There!</p>
-      </header>
+    <div className="container">
+      <Header title="Mero Task Tracker" />
     </div>
   );
 }
