@@ -10,8 +10,6 @@ const EditTask = ({ onEdit }) => {
   const [day, setDay] = useState(state.day);
   const [reminder, setReminder] = useState(state.reminder);
 
-  console.log(state)
-
   const onSubmit = (e) => {
     e.preventDefault()
 
