@@ -10,8 +10,6 @@ const About = () => {
                 It is built using React & Json-Server which mocks like a REST API server and uses
                 json file persisting data just like SQLite but using JSON file.
             </p>
-            <br />
-            <p><a href="/">Go Back</a></p>
         </>
     )
 }
